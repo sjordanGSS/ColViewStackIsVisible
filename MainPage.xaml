@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColViewStackIsVisible.MainPage"
+             x:Name="page">
+    <ContentPage.Resources>
+        <x:Boolean x:Key="show-label">True</x:Boolean>
+    </ContentPage.Resources>
+
+    <FlexLayout Direction="Column">
+        <CollectionView x:Name="collection"
+                        FlexLayout.Basis="500">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="x:Object">
+                    <VerticalStackLayout>
+                        <Label Text="This Label should turn invisible"
+                            IsVisible="{DynamicResource show-label}"/>
+                        <Label Text="This label should move up to fill the space" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Tap to make label invisible"
+                FlexLayout.Basis="60"
+                Clicked="Button_Clicked"/>
+    </FlexLayout>
+</ContentPage>
