@@ -10,7 +10,8 @@
     <FlexLayout Direction="Column">
         <CollectionView x:Name="collection"
                         ItemSizingStrategy="MeasureFirstItem"
-                        FlexLayout.Basis="500">
+                        FlexLayout.Basis="1"
+                        FlexLayout.Grow="1">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Horizontal" />
             </CollectionView.ItemsLayout>
@@ -26,7 +27,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         <Button Text="Tap to make label invisible"
-                FlexLayout.Basis="60"
+                FlexLayout.Shrink="0"
                 Clicked="Button_Clicked"/>
     </FlexLayout>
 </ContentPage>
