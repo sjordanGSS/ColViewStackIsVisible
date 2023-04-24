@@ -9,6 +9,7 @@
 
     <FlexLayout Direction="Column">
         <CollectionView x:Name="collection"
+                        ItemSizingStrategy="MeasureFirstItem"
                         FlexLayout.Basis="500">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Horizontal" />
